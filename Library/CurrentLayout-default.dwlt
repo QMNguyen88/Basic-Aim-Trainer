@@ -311,19 +311,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/Game Scene
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/Game Scene
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\Unity Projects\Basic Aim Trainer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 80340000
-    m_LastClickedID: 13440
+    m_SelectedIDs: 82340000
+    m_LastClickedID: 13442
     m_ExpandedIDs: 00000000723400007434000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -475,9 +475,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e8330000
-      m_LastClickedID: 13288
-      m_ExpandedIDs: 66fbffffd0330000
+      m_SelectedIDs: 18390000
+      m_LastClickedID: 14616
+      m_ExpandedIDs: 18ecffff1cecfffffaefffff8ef0ffff00f2ffff5cf2ffff88f2ffffa8f2ffffe2f2ffff14f3ffff3cf3ffff68f3ffff66fbffff0039000032390000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

@@ -64,10 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Game Scene\Bullet.cs" />
-    <Compile Include="Assets\Scripts\Game Scene\GunScript.cs" />
-    <Compile Include="Assets\Scripts\Game Scene\MouseLook.cs" />
     <Compile Include="Assets\Scripts\Game Scene\Player.cs" />
-    <Compile Include="Assets\Scripts\Game Scene\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Game Scene\SC_FPSController.cs" />
     <Compile Include="Assets\Scripts\Main Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Main Menu\MouseHoverMainMenu.cs" />
