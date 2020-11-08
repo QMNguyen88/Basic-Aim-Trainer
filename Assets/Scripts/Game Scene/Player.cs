@@ -16,6 +16,13 @@ public class Player : MonoBehaviour
             GameObject bulletObject = Instantiate(bulletPrefab);
             bulletObject.transform.position = playerCamera.transform.position + playerCamera.transform.forward;
             bulletObject.transform.forward = playerCamera.transform.forward;
+            increaseNumberOfShots();
         }
+    }
+
+    void increaseNumberOfShots()
+    {
+        GameScript script = GameObject.Find("GameController").GetComponent<GameScript>();
+        script.IncrementNumberOfShots();
     }
 }

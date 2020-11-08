@@ -10,10 +10,12 @@ public class Bullet : MonoBehaviour
     public float lifeDuration = 2f;
 
     private float lifeTimer;
+    private bool didBulletCollideWithObject;
 
     void Start()
     {
         lifeTimer = lifeDuration;
+        didBulletCollideWithObject = false;
     }
 
     // Update is called once per frame
@@ -22,32 +24,32 @@ public class Bullet : MonoBehaviour
         RaycastHit hit;
 
         Vector3 initialPosition = transform.position;
-
         transform.position += transform.forward * speed * Time.deltaTime;
         Vector3 endPosition = transform.position;
 
 
         if (Physics.SphereCast(initialPosition, .2f, transform.forward, out hit, Vector3.Distance(initialPosition, endPosition)))
         {
-            if (hit.collider.name == "Target")
+            if (hit.collider.name == "Target(Clone)")
             {
-                Debug.Log("Target Hit");
-                Destroy(hit.collider.gameObject);
+                targetHit(hit);
             }
+            didBulletCollideWithObject = true;
         }
 
         lifeTimer -= Time.deltaTime;
-        if(lifeTimer <= 0f)
+        bool destroyBullet = didBulletCollideWithObject || lifeTimer <= 0f;
+        if(destroyBullet)
         {
             Destroy(gameObject);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void targetHit(RaycastHit hit)
     {
-        if (other.gameObject.name == "Target")
-        {
-            Debug.Log("Target Hit");
-        }
+        Destroy(hit.collider.gameObject);
+        GameScript script = GameObject.Find("GameController").GetComponent<GameScript>();
+        script.IncrementNumberOfHits();
+
     }
 }
