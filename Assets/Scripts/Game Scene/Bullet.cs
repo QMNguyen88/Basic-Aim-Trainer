@@ -13,19 +13,41 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        lifeTimer = lifeDuration;    
+        lifeTimer = lifeDuration;
     }
 
     // Update is called once per frame
     void Update()
     {
+        RaycastHit hit;
+
+        Vector3 initialPosition = transform.position;
+
         transform.position += transform.forward * speed * Time.deltaTime;
+        Vector3 endPosition = transform.position;
+
+
+        if (Physics.SphereCast(initialPosition, .2f, transform.forward, out hit, Vector3.Distance(initialPosition, endPosition)))
+        {
+            if (hit.collider.name == "Target")
+            {
+                Debug.Log("Target Hit");
+                Destroy(hit.collider.gameObject);
+            }
+        }
 
         lifeTimer -= Time.deltaTime;
-        Debug.Log(lifeTimer);
         if(lifeTimer <= 0f)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Target")
+        {
+            Debug.Log("Target Hit");
         }
     }
 }
