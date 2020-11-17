@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public bool isStart;
     public bool isQuit;
+    public bool isSettings;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,11 @@ public class MainMenu : MonoBehaviour
         if (isStart)
         {
             SceneManager.LoadScene(1);
+        }
+
+        if (isSettings)
+        {
+            SceneManager.LoadScene(2);
         }
 
         if (isQuit)

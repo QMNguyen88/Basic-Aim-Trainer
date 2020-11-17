@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class GameScript : MonoBehaviour
 {
     public GameObject targetPrefab;
-    public float targetRespawnTime = 3f;
-    public int maxNumberOfTargets = 5;
-    public float lifeDuration = 1f;
+    public float targetRespawnTime;
+    public int maxNumberOfTargets;
+    public float lifeDuration;
     
     private int numberOfHits;
     private float targetRespawnTimeTracker;
@@ -26,6 +26,7 @@ public class GameScript : MonoBehaviour
         isRoundCompleted = false;
         targetRespawnTimeTracker = targetRespawnTime;
 
+        InitializeDifficulty();
         InitializeScoreboard();
     }
 
@@ -34,7 +35,6 @@ public class GameScript : MonoBehaviour
     {
         targetRespawnTimeTracker -= Time.deltaTime;
         bool shouldSpawnTarget = targetRespawnTimeTracker <= 0f && numberOfTargetsSpawned < maxNumberOfTargets;
-        Debug.Log("NumOfTargets: " + numberOfTargetsSpawned + " MaxNumOfTargets: " + maxNumberOfTargets);
         
         if(shouldSpawnTarget)
         {
@@ -75,6 +75,30 @@ public class GameScript : MonoBehaviour
         if(numberOfTargetsSpawned == maxNumberOfTargets)
         {
             lastTarget = target;
+        }
+    }
+
+    private void InitializeDifficulty()
+    {
+        if (GlobalGameObject.Instance != null)
+        {
+
+            int difficultyLevel = GlobalGameObject.Instance.difficultyLevel;
+            switch (difficultyLevel)
+            {
+                case GlobalGameObject.DIFFICULTY_EASY:
+                    targetRespawnTime = 4;
+                    lifeDuration = 2;
+                    break;
+                case GlobalGameObject.DIFFICULTY_HARD:
+                    targetRespawnTime = 1;
+                    lifeDuration = .5f;
+                    break;
+                default:
+                    targetRespawnTime = 2;
+                    lifeDuration = 1;
+                    break;
+            }
         }
     }
 

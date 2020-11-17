@@ -68,8 +68,11 @@
     <Compile Include="Assets\Scripts\Game Scene\Player.cs" />
     <Compile Include="Assets\Scripts\Game Scene\SC_FPSController.cs" />
     <Compile Include="Assets\Scripts\Game Scene\Target.cs" />
+    <Compile Include="Assets\Scripts\GlobalGameObject\GlobalGameObject.cs" />
+    <Compile Include="Assets\Scripts\Main Menu\DifficultyChanger.cs" />
     <Compile Include="Assets\Scripts\Main Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Main Menu\MouseHoverMainMenu.cs" />
+    <Compile Include="Assets\Scripts\Main Menu\Settings.cs" />
     <Reference Include="UnityEngine">
       <HintPath>F:/Program Files (x86)/2019.4.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
